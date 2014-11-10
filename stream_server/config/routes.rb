@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :posts
     resources :events
+    get 'users/current'
   end
 
   root to: "home#index"

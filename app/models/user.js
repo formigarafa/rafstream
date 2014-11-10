@@ -2,10 +2,23 @@ import Ember from 'ember';
 import request from 'ic-ajax';
 
 var User =  Ember.Object.extend({
-
+  signedIn: function() {
+    return !Ember.isBlank(this.get('email'));
+  }.property('email')
 });
 
 User.reopenClass({
+  fetchSession: function() {
+    var requestData = {
+      url: "/api/users/current.json",
+      type: 'GET',
+      dataType: "json",
+      contentType: 'application/json; charset=utf-8',
+    };
+    return request(requestData).then(function(response) {
+      return User.create(response.user);
+    });
+  },
   createSession: function(email, password) {
     var requestData = {
       url: "/api/users/sign_in.json",
