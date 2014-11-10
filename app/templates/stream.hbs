@@ -4,6 +4,9 @@
   {{#each}}
     <li>
       {{actor}}: {{activity}} - {{postId}}
+      {{#if linkable}}
+        {{#link-to 'post' postId}}open{{/link-to}}
+      {{/if}}
     </li>
   {{/each}}
 </ul>
