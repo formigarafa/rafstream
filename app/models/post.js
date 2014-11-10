@@ -4,5 +4,6 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   body: DS.attr('string'),
   kind: DS.attr('string'),
-  updatedAt: DS.attr('date')
+  updatedAt: DS.attr('date'),
+  events: DS.hasMany('event')
 });

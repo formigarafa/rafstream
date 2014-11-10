@@ -5,5 +5,6 @@ export default DS.Model.extend({
   createdAt: DS.attr('date'),
   activity: DS.attr('string'),
   postId: DS.attr('number'),
-  linkable: DS.attr('boolean')
+  linkable: DS.attr('boolean'),
+  post: DS.belongsTo('post')
 });
