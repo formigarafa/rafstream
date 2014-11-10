@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :posts
+
+  resources :events
+
   scope(:path => '/api') do
     devise_for :users
   end
