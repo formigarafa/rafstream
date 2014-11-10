@@ -1,12 +1,11 @@
-<h3>Sign in</h3>
+<div class="container">
+  <form {{action 'create' on='submit'}} class="form-signin" role="form">
 
+    <h2 class="form-signin-heading">Please sign in</h2>
+    {{input value=email placeholder="Email address" class="form-control" }}
 
-<form {{action 'create' on='submit'}}>
-  <label>Email</label>
-  {{input value=email}}
+    {{input value=password class="form-control" placeholder="Password"}}
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </form>
 
-  <label>Password</label>
-  {{input value=password}}
-
-  <button type="submit">Sign in</button>
-</form>
+</div> <!-- /container -->

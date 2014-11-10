@@ -3,3 +3,16 @@ html, body {
 }
 
 body { padding-top: 30px; }
+
+.form-signin {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-signin > .btn-block {
+  margin-top: 25px;
+}
+
+.form-signin > .form-control {
+  margin-bottom: 10px;
+}
