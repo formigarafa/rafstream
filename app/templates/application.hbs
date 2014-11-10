@@ -1,23 +1,28 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<h2 id='title'>Welcome to Raf Streaming</h2>
 
 {{#if currentUser.signedIn}}
   {{currentUser.email}}
   <button {{action 'signOut'}}>Sign out</button>
+
+  <ul>
+    <li>
+      {{#link-to 'stream'}}Stream{{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'posts'}}My Posts{{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'posts.new'}}New Post{{/link-to}}
+    </li>
+  </ul>
+
 {{else}}
   {{#link-to 'sign_in'}}Sign In{{/link-to}}
   {{#link-to 'sign_up'}}Sign Up{{/link-to}}
-{{/if}}
 
-<ul>
-  <li>
-    {{#link-to 'stream'}}Stream{{/link-to}}
-  </li>
-  <li>
-    {{#link-to 'posts'}}My Posts{{/link-to}}
-  </li>
-  <li>
-    {{#link-to 'posts.new'}}New Post{{/link-to}}
-  </li>
-</ul>
+  <div>
+    Please sign in or sign up to access the app.
+  </div>
+{{/if}}
 
 {{outlet}}
