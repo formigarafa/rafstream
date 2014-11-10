@@ -21,3 +21,7 @@ body { padding-top: 30px; }
   margin-top: 15px;
   margin-bottom: 35px;
 }
+
+.post-body {
+  min-height: 240px;
+}

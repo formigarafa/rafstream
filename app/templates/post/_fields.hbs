@@ -1,16 +1,16 @@
-<div class=field>
+<div class="form-group">
   <label>Kind</label>
-  {{view 'select' content=optionsForKind value=kind prompt="pick one..."}}
+  {{view 'select' content=optionsForKind value=kind prompt="pick one..." class="form-control" }}
 </div>
 
-<div class=field>
+<div class="form-group">
   <label>Title</label>
-  {{input value=title}}
+  {{input value=title class="form-control"}}
 </div>
 
-<div class=field>
+<div class="form-group">
   <label>Body</label>
-  {{textarea value=body}}
+  {{textarea value=body class="form-control post-body"}}
 </div>
 
-<button type="submit">Posts</button>
+<button type="submit" class="btn btn-default">Posts</button>
