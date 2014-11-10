@@ -1,0 +1,15 @@
+<h3>Sign up</h3>
+
+
+<form {{action 'create' on='submit'}}>
+  <label>Email</label>
+  {{input value=email}}
+
+  <label>Password</label>
+  {{input value=password}}
+
+  <label>Password confirmation</label>
+  {{input value=passwordConfirmation}}
+
+  <button type="submit">Sign Up</button>
+</form>
