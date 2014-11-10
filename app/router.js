@@ -7,7 +7,9 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('stream', function() {
-    this.resource('posts');
+    this.resource('posts', function(){
+      this.route('new');
+    });
   });
 });
 
