@@ -3,15 +3,9 @@ Post visualization
 {{partial 'post/show'}}
 
 {{#if isMine}}
-  <div class="controls">
-    <ul>
-      <li>
-        {{#link-to 'post.edit'}}Edit{{/link-to}}
-      </li>
-      <li>
-        {{#link-to 'post.delete'}}Delete{{/link-to}}
-      </li>
-    </ul>
+  <div class="btn-group controls">
+    {{#link-to 'post.edit' class="btn btn-primary"}}Edit{{/link-to}}
+    {{#link-to 'post.delete' class="btn btn-danger"}}Delete{{/link-to}}
   </div>
 
   {{outlet}}

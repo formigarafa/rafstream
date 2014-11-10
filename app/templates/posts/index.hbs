@@ -3,7 +3,7 @@ Post listing
 {{#each}}
   {{partial 'post/show'}}
 
-  <div class="controls">
-    {{#link-to 'post' this}}permalink{{/link-to}}
+  <div class="btn-group controls">
+    {{#link-to 'post' this class="btn btn-default"}}permalink{{/link-to}}
   </div>
 {{/each}}

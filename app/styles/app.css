@@ -16,3 +16,8 @@ body { padding-top: 30px; }
 .form-signin > .form-control {
   margin-bottom: 10px;
 }
+
+.controls {
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
