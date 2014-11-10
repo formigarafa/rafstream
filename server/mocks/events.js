@@ -7,7 +7,9 @@ module.exports = function(app) {
       {id: 2, actor: 'rafael', createdAt: "2014-11-09T09:04:27.978Z", activity: 'created', postId: 171},
       {id: 3, actor: 'rafael', createdAt: "2014-11-10T09:04:27.978Z", activity: 'updated', postId: 1},
       {id: 4, actor: 'rafael', createdAt: "2014-11-10T09:04:27.978Z", activity: 'deleted', postId: 171},
-      {id: 5, actor: 'other guy', createdAt: "2014-11-10T09:04:27.978Z", activity: 'created', postId: 3}
+      {id: 5, actor: 'other guy', createdAt: "2014-11-10T09:04:27.978Z", activity: 'created', postId: 2},
+      {id: 6, actor: 'other guy', createdAt: "2014-11-10T09:05:27.978Z", activity: 'created', postId: 3},
+      {id: 7, actor: 'other guy', createdAt: "2014-11-10T09:06:27.978Z", activity: 'created', postId: 4}
     ]});
   });
   app.use('/api/events', eventsRouter);
