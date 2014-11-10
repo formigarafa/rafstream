@@ -1,3 +1,3 @@
 class AuthBaseController < ApplicationController
-  respond_to :json
+  respond_to :html, :json
 end
