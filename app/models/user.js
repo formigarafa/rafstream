@@ -48,6 +48,24 @@ User.reopenClass({
     return request(requestData).then(function(response) {
       return User.create(response.user);
     });
+  },
+  signUp: function(email, password, passwordConfirmation) {
+    var requestData = {
+      url: "/api/users.json",
+      type: 'POST',
+      dataType: "json",
+      contentType: 'application/json; charset=utf-8',
+      data: JSON.stringify({
+        user: {
+          email: email,
+          password: password,
+          passwordConfirmation: passwordConfirmation
+        }
+      })
+    };
+    return request(requestData).then(function(response) {
+      return User.create(response.user);
+    });
   }
 });
 
