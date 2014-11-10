@@ -10,7 +10,9 @@ Router.map(function() {
     this.resource('posts', function(){
       this.route('new');
     });
-    this.resource('post', { path: '/post/:post_id' });
+    this.resource('post', { path: '/post/:post_id'}, function() {
+      this.route('delete');
+    });
   });
 });
 

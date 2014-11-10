@@ -44,5 +44,11 @@ module.exports = function(app) {
       {id: req.params.id, kind: 'blog', title: 'updated', body: 'post stored, again'}
     });
   });
+
+  postsRouter.delete('/:id', function(req, res) {
+    res.send({"post":
+      {id: req.params.id, kind: 'blog', title: 'deleted', body: 'post removed'}
+    });
+  });
   app.use('/api/posts', postsRouter);
 };
