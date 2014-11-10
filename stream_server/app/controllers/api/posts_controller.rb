@@ -6,6 +6,10 @@ module Api
       respond_with current_user.posts
     end
 
+    def show
+      respond_with Post.find params[:id]
+    end
+
     def create
       post = current_user.posts.create post_params
       render json: PostSerializer.new(post)
