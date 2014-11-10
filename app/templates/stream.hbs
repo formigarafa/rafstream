@@ -1,16 +1,24 @@
-<h3>Recent Events</h3>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+      {{outlet}}
+    </div>
+    <div class="col-md-5">
+      <h3>Recent Events</h3>
 
-<ul>
-  {{#each filteredList}}
-    <li>
-      User {{actorName}} {{activity}}:
-      {{#if linkable}}
-        {{#link-to 'post' post}}[{{post.kind}}]: {{post.title}}{{/link-to}}
-      {{else}}
-        a post
-      {{/if}}
-    </li>
-  {{/each}}
-</ul>
+      <ul class="list-group">
+        {{#each filteredList}}
+          <li class="list-group-item">
+            User {{actorName}} {{activity}}:
+            {{#if linkable}}
+              {{#link-to 'post' post}}[{{post.kind}}]: {{post.title}}{{/link-to}}
+            {{else}}
+              a post
+            {{/if}}
+          </li>
+        {{/each}}
+      </ul>
 
-{{outlet}}
+    </div>
+  </div>
+</div>
