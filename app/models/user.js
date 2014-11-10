@@ -13,7 +13,7 @@ var User =  Ember.Object.extend({
       contentType: 'application/json; charset=utf-8',
     };
     var user = this;
-    return request(requestData).then(function(response) {
+    return request(requestData).then(function() {
       user.setProperties({id: null, email: null});
       return user;
     });
