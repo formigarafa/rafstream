@@ -4,15 +4,17 @@ Post visualization
 <div>
   {{body}}
 </div>
-<div class="controls">
-  <ul>
-    <li>
-      {{#link-to 'post.edit'}}Edit{{/link-to}}
-    </li>
-    <li>
-      {{#link-to 'post.delete'}}Delete{{/link-to}}
-    </li>
-  </ul>
-</div>
+{{#if isMine}}
+  <div class="controls">
+    <ul>
+      <li>
+        {{#link-to 'post.edit'}}Edit{{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'post.delete'}}Delete{{/link-to}}
+      </li>
+    </ul>
+  </div>
 
-{{outlet}}
+  {{outlet}}
+{{/if}}

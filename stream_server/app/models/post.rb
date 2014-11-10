@@ -9,6 +9,10 @@ class Post < ActiveRecord::Base
     events.create actor: author, activity: activity_name
   end
 
+  def author_name
+    author.email
+  end
+
   def activity_name
     if Event.where(post_id: self).none?
       'created'
