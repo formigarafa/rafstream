@@ -1,0 +1,16 @@
+<div class=field>
+  <label>Kind</label>
+  {{view 'select' content=optionsForKind value=kind prompt="pick one..."}}
+</div>
+
+<div class=field>
+  <label>Title</label>
+  {{input value=title}}
+</div>
+
+<div class=field>
+  <label>Body</label>
+  {{textarea value=body}}
+</div>
+
+<button type="submit">Posts</button>

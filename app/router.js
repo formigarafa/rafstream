@@ -11,6 +11,7 @@ Router.map(function() {
       this.route('new');
     });
     this.resource('post', { path: '/post/:post_id'}, function() {
+      this.route('edit');
       this.route('delete');
     });
   });

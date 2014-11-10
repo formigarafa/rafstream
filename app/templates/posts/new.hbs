@@ -1,21 +1,5 @@
 <h3>new post</h3>
 
 <form {{action 'create' on='submit'}}>
-
-  <div class=field>
-    <label>Kind</label>
-    {{view 'select' content=optionsForKind value=kind prompt="pick one..."}}
-  </div>
-
-  <div class=field>
-    <label>Title</label>
-    {{input value=title}}
-  </div>
-
-  <div class=field>
-    <label>Body</label>
-    {{textarea value=body}}
-  </div>
-
-  <button type="submit">Post</button>
+  {{partial 'post/fields'}}
 </form>
