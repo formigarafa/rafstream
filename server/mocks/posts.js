@@ -9,6 +9,12 @@ module.exports = function(app) {
     ]});
   });
 
+  postsRouter.get('/1', function(req, res) {
+    res.send({"post":
+      {id: 1, kind: 'blog', title: 'ember is cool', body: 'why the heck should we try angularjs?'},
+    });
+  });
+
   postsRouter.post('/', function(req, res) {
     res.send({"post":
       {id: 1, kind: 'blog', title: 'saved', body: 'post stored'}
