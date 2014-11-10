@@ -7,6 +7,6 @@ class Event < ActiveRecord::Base
   end
 
   def linkable?
-    post.present?
+    post.present? && post.persisted?
   end
 end
