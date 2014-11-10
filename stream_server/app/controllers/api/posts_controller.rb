@@ -20,5 +20,11 @@ module Api
     def post_params
       params.require(:post).permit(:title, :body, :kind)
     end
+
+    def destroy
+      post = current_user.posts.find(params[:id])
+      post.destroy
+      render json: PostSerializer.new(post)
+    end
   end
 end
