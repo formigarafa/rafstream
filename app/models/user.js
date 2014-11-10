@@ -4,7 +4,20 @@ import request from 'ic-ajax';
 var User =  Ember.Object.extend({
   signedIn: function() {
     return !Ember.isBlank(this.get('email'));
-  }.property('email')
+  }.property('email'),
+  logout: function() {
+    var requestData = {
+      url: "/api/users/sign_out.json",
+      type: 'DELETE',
+      dataType: "json",
+      contentType: 'application/json; charset=utf-8',
+    };
+    var user = this;
+    return request(requestData).then(function(response) {
+      user.setProperties({id: null, email: null});
+      return user;
+    });
+  }
 });
 
 User.reopenClass({
