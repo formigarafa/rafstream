@@ -32,7 +32,7 @@ User.reopenClass({
       return User.create(response.user);
     });
   },
-  createSession: function(email, password) {
+  signIn: function(email, password) {
     var requestData = {
       url: "/api/users/sign_in.json",
       type: 'POST',

@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     create: function() {
       var route = this;
       var user = this.modelFor('sign_in');
-      user.constructor.createSession(user.get('email'), user.get('password')).then(function(user) {
+      user.constructor.signIn(user.get('email'), user.get('password')).then(function(user) {
         console.log('user logged: ', user.getProperties('email'));
         route.signIn(user);
       });
