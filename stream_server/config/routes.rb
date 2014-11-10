@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :skip => [:sessions, :password, :registrations]
-  as :user do
-    get 'api/sessions' => 'devise/sessions#new', :as => :new_user_session
-    post 'api/sessions' => 'devise/sessions#create', :as => :user_session
-    delete 'api/sessions' => 'devise/sessions#destroy', :as => :destroy_user_session
-
-    post 'api/users' => 'devise/registrations#create'
+  scope(:path => '/api') do
+    devise_for :users
   end
 
   root to: "home#index"
