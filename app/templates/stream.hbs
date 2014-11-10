@@ -3,7 +3,7 @@
 <ul>
   {{#each}}
     <li>
-      {{actor}}: {{activity}} - {{postId}}
+      {{actorName}}: {{activity}} - {{postId}}
       {{#if linkable}}
         {{#link-to 'post' postId}}open{{/link-to}}
       {{/if}}
