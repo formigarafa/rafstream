@@ -11,6 +11,12 @@ module Api
       render json: PostSerializer.new(post)
     end
 
+    def update
+      post = current_user.posts.find(params[:id])
+      post.update(post_params)
+      render json: PostSerializer.new(post)
+    end
+
     def post_params
       params.require(:post).permit(:title, :body, :kind)
     end
