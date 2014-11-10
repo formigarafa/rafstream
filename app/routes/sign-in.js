@@ -9,9 +9,16 @@ export default Ember.Route.extend({
     create: function() {
       var route = this;
       var user = this.modelFor('sign_in');
-      user.constructor.createSession(user.get('email'), user.get('password')).then(function() {
-        route.transitionTo('stream');
+      user.constructor.createSession(user.get('email'), user.get('password')).then(function(user) {
+        console.log('user logged: ', user.getProperties('email'));
+        route.signIn(user);
       });
     }
+  },
+
+  signIn: function(user) {
+    var appModel = this.modelFor('application');
+    appModel.set('currentUser', user);
+    this.transitionTo('stream');
   }
 });
