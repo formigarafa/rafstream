@@ -1,5 +1,13 @@
 <h2 id='title'>Welcome to Ember.js</h2>
 
+{{#if currentUser.signedIn}}
+  {{currentUser.email}}
+  <button {{action 'signOut'}}>Sign out</button>
+{{else}}
+  {{#link-to 'sign_in'}}Sign In{{/link-to}}
+  {{#link-to 'sign_up'}}Sign Up{{/link-to}}
+{{/if}}
+
 <ul>
   <li>
     {{#link-to 'stream'}}Stream{{/link-to}}
