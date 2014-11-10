@@ -3,9 +3,11 @@
 <ul>
   {{#each filteredList}}
     <li>
-      {{actorName}}: {{activity}} - {{postId}}
+      User {{actorName}} {{activity}}:
       {{#if linkable}}
-        {{#link-to 'post' postId}}open{{/link-to}}
+        {{#link-to 'post' post}}[{{post.kind}}]: {{post.title}}{{/link-to}}
+      {{else}}
+        a post
       {{/if}}
     </li>
   {{/each}}
