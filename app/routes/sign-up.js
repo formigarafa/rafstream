@@ -12,6 +12,15 @@ export default Ember.Route.extend({
       User.signUp(user.get('email'), user.get('password'), user.get('passwordConfirmation')).then(function(user) {
         console.log('user created', user);
         route.signIn(user);
+      }).catch(function(response){
+        var errors = response.jqXHR.responseJSON.errors;
+        var error_messages = [];
+        for(var field in errors) {
+          errors[field].map(function(failure) {
+            error_messages.push(field + " " + failure);
+          });
+        }
+        user.set('errors', error_messages);
       });
     }
   },
