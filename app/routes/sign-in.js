@@ -12,6 +12,9 @@ export default Ember.Route.extend({
       User.signIn(user.get('email'), user.get('password')).then(function(user) {
         console.log('user logged: ', user.getProperties('email'));
         route.signIn(user);
+      }).catch(function(response){
+        var error_messages = [response.jqXHR.responseJSON.error];
+        user.set('errors', error_messages);
       });
     }
   },

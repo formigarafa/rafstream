@@ -1,21 +1,4 @@
-{{#if errors.any }}
-  <div class="alert alert-danger" role="alert">
-    <button type="button" class="close" {{action 'clearErrors'}}>
-      <span aria-hidden="true">&times;</span>
-      <span class="sr-only">Close</span>
-    </button>
-    <div class="container">
-      <h3>Ooops! Something feels wrong here... could you please check? </h3>
-      <ul>
-        {{#each errors}}
-            <li>
-              {{this}}
-            </li>
-        {{/each}}
-      </ul>
-    </div>
-  </div>
-{{/if}}
+{{partial 'errors'}}
 
 <div class="container">
   <form {{action 'create' on='submit'}} class="form-signin" role="form">
