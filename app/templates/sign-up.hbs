@@ -1,3 +1,17 @@
+{{#if errors.any }}
+    <div class="container">
+      <h3>Ooops! Something feels wrong here... could you please check? </h3>
+      <ul>
+        {{#each errors}}
+            <li>
+              {{this}}
+            </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+{{/if}}
+
 <div class="container">
   <form {{action 'create' on='submit'}} class="form-signin" role="form">
 
